@@ -1,0 +1,14 @@
+# Quick site switching with auto-complete
+go() {
+    if [ -z "$1" ]; then
+        echo "Usage: go <username>"
+        return 1
+    fi
+    sudo su - "$1"
+}
+
+_go_complete() {
+    local users=$(ls -1 /home | grep -v ubuntu)
+    COMPREPLY=($(compgen -W "$users" -- "${COMP_WORDS[1]}"))
+}
+complete -F _go_complete go
