@@ -2,6 +2,8 @@
 
 Quick navigation and user switching for Laravel Forge site management on Ubuntu/Debian servers.
 
+![demo](demo.gif)
+
 ## What It Does
 
 - Adds a `go <username>` command to quickly switch between Forge-isolated site users
